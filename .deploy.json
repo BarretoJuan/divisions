@@ -1,4 +1,4 @@
 {
-  "DEPLOYPATH": "/home/gp5/git/divisions/test/index.php",
-  "task": ["index.php", "images"]
+  "DEPLOYPATH": "/home/gp5/git/divisions/",
+  "task": ["index.php", "public"]
 }
