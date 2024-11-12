@@ -1,0 +1,15 @@
+CREATE TABLE User (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username VARCHAR(15) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Operation (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    divisor INTEGER(2) NOT NULL,
+    dividend INTEGER(2) NOT NULL,
+    user_id INTEGER,
+    is_solved BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES User (id)
+);
+
