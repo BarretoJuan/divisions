@@ -3,18 +3,11 @@ require_once 'db.php';
 
 function registerUser() {
     $data = json_decode(file_get_contents("php://input"), true);
+    error_log("aki el pepe: " . print_r($data, true));
+
     $username = $data['username'];
     $password = $data['password'];
 
-    if (strlen($username) < 4 || strlen($username) > 15) {
-        echo json_encode(["error" => "El nombre de usuario debe tener entre 4 y 15 caracteres"]);
-        return;
-    }
-
-    if (strlen($password) < 8) {
-        echo json_encode(["error" => "La contraseña debe tener al menos 8 caracteres"]);
-        return;
-    }
 
     // Hashear contraseña después de validarla
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
