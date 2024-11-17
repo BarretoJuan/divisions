@@ -27,7 +27,7 @@ function generateDivisions() {
         $stmtInsert = $db->prepare("INSERT INTO Operation (divisor, dividend, user_id, is_solved) VALUES (?, ?, ?, 0)");
         $generatedCount = 0;
 
-        while ($generatedCount < 24) { //número de operaciones a crear
+        while ($generatedCount < 27) { //número de operaciones a crear
             $divisor = rand(2, 9); // Genera un divisor de un dígito (2-9)
             $dividend = rand(10, 99); // Genera un dividendo de dos dígitos (10-99)
             
