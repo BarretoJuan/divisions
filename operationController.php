@@ -36,7 +36,7 @@ function generateDivisions() {
                 $generatedCount++;
             }
         }
-        echo json_encode(["message" => "Operaciones generadas"]);
+        return; // Doesn't return anything
     } else {
         echo json_encode(["error" => "Usuario no encontrado"]);
     }
