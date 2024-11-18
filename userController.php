@@ -1,5 +1,6 @@
 <?php
 require_once 'db.php';
+require_once 'operationController.php';
 
 function registerUser() {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -18,6 +19,8 @@ function registerUser() {
     try {
         $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
         echo json_encode(["message" => "Usuario registrado satisfactoriamente"]);
+        generateDivisions();
+
     } catch (Exception $e) {
         echo json_encode(["error" => "Ese nombre de usuario ya existe"]);
     }
